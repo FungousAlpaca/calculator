@@ -175,4 +175,15 @@ clear.addEventListener('click', () => {
     console.log(`Display value = ${displayValue}`);
 })
 
+plus.addEventListener('click', () => {
+    operandOne = Number(displayValue);
+    operation = add;
+    displayValue = '0';
+});
+
+equals.addEventListener('click', () => {
+    operandTwo = Number(displayValue);
+    bottomDisplay.textContent = operate(operation, operandOne, operandTwo);
+    
+});
 
