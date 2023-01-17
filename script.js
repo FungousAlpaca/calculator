@@ -181,9 +181,28 @@ plus.addEventListener('click', () => {
     displayValue = '0';
 });
 
+minus.addEventListener('click', () => {
+    operandOne = Number(displayValue);
+    operation = subtract;
+    displayValue = '0';
+});
+
+multiplication.addEventListener('click', () => {
+    operandOne = Number(displayValue);
+    operation = multiply;
+    displayValue = '0';
+});
+
+division.addEventListener('click', () => {
+    operandOne = Number(displayValue);
+    operation = divide;
+    displayValue = '0';
+});
+
 equals.addEventListener('click', () => {
     operandTwo = Number(displayValue);
     bottomDisplay.textContent = operate(operation, operandOne, operandTwo);
+    displayValue = (bottomDisplay.textContent);
     
 });
 
