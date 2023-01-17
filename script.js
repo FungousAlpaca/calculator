@@ -45,7 +45,7 @@ zero.addEventListener('click', () => {
         bottomDisplay.textContent = '0';
         displayValue = '0';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '0';
         displayValue += '0';
         console.log(`Display value = ${displayValue}`);
@@ -58,7 +58,7 @@ one.addEventListener('click', () => {
         bottomDisplay.textContent = '1';
         displayValue = '1';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '1';
         displayValue += '1';
         console.log(`Display value = ${displayValue}`);
@@ -71,7 +71,7 @@ two.addEventListener('click', () => {
         bottomDisplay.textContent = '2';
         displayValue = '2';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '2';
         displayValue += '2';
         console.log(`Display value = ${displayValue}`);
@@ -84,7 +84,7 @@ three.addEventListener('click', () => {
         bottomDisplay.textContent = '3';
         displayValue = '3';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '3';
         displayValue += '3';
         console.log(`Display value = ${displayValue}`);
@@ -97,7 +97,7 @@ four.addEventListener('click', () => {
         bottomDisplay.textContent = '4';
         displayValue = '4';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '4';
         displayValue += '4';
         console.log(`Display value = ${displayValue}`);
@@ -110,7 +110,7 @@ five.addEventListener('click', () => {
         bottomDisplay.textContent = '5';
         displayValue = '5';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '5';
         displayValue += '5';
         console.log(`Display value = ${displayValue}`);
@@ -123,7 +123,7 @@ six.addEventListener('click', () => {
         bottomDisplay.textContent = '6';
         displayValue = '6';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '6';
         displayValue += '6';
         console.log(`Display value = ${displayValue}`);
@@ -136,7 +136,7 @@ seven.addEventListener('click', () => {
         bottomDisplay.textContent = '7';
         displayValue = '7';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '7';
         displayValue += '7';
         console.log(`Display value = ${displayValue}`);
@@ -149,7 +149,7 @@ eight.addEventListener('click', () => {
         bottomDisplay.textContent = '8';
         displayValue = '8';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '8';
         displayValue += '8';
         console.log(`Display value = ${displayValue}`);
@@ -162,11 +162,10 @@ nine.addEventListener('click', () => {
         bottomDisplay.textContent = '9';
         displayValue = '9';
         console.log(`Display value = ${displayValue}`);
-    } else {
+    } else if (displayValue.length < 9) {
         bottomDisplay.textContent += '9';
         displayValue += '9';
         console.log(`Display value = ${displayValue}`);
-
     }
 });
 
@@ -175,8 +174,5 @@ clear.addEventListener('click', () => {
     displayValue = '0';
     console.log(`Display value = ${displayValue}`);
 })
-
-
-
 
 
