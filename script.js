@@ -202,7 +202,5 @@ division.addEventListener('click', () => {
 equals.addEventListener('click', () => {
     operandTwo = Number(displayValue);
     bottomDisplay.textContent = operate(operation, operandOne, operandTwo);
-    displayValue = (bottomDisplay.textContent);
-    
 });
 
