@@ -41,6 +41,16 @@ let displayValue = 0;
 
 zero.addEventListener('click', () => {
 
+   if (displayValue === 0) {
+        bottomDisplay.textContent = 0;
+        displayValue += 0;
+        console.log(`Display value = ${displayValue}`);
+    } else {
+        bottomDisplay.textContent += 0;
+        displayValue += 0;
+        console.log(`Display value = ${displayValue}`);
+
+    }
 });
 
 one.addEventListener('click', () => {
