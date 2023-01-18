@@ -53,10 +53,14 @@ operators.forEach((op) => {
   op.addEventListener("click", () => {
     if (operation !== undefined && operandOne !== undefined) {
       operandTwo = Number(displayValue);
-      let previousTotal = Math.round(
-        operate(operation, operandOne, operandTwo)
-      );
-      bottomDisplay.textContent = previousTotal;
+
+      let previousTotal = operate(operation, operandOne, operandTwo);
+
+      if (previousTotal.toString().indexOf(".") > -1) {
+        bottomDisplay.textContent = Math.round(previousTotal);
+      } else {
+        bottomDisplay.textContent = previousTotal;
+      }
       operation = `${op.getAttribute("id")}`;
       operandOne = previousTotal;
       displayValue = "0";
@@ -91,9 +95,13 @@ equals.addEventListener("click", () => {
       operandOne = undefined;
       operandTwo = undefined;
     } else {
-      bottomDisplay.textContent = Math.round(
-        operate(operation, operandOne, operandTwo)
-      );
+      let rounding = operate(operation, operandOne, operandTwo);
+
+      if (rounding.toString().indexOf(".") > -1) {
+        bottomDisplay.textContent = Math.round(rounding);
+      } else {
+        bottomDisplay.textContent = rounding;
+      }
     }
   }
 });
