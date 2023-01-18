@@ -29,6 +29,7 @@ function operate(operator, num1, num2) {
 const equals = document.querySelector("#equals");
 const clear = document.querySelector("#clear");
 const bottomDisplay = document.querySelector(".display-text-bottom");
+const topDisplay = document.querySelector(".display-text-top");
 const digits = document.querySelectorAll(".digit");
 const operators = document.querySelectorAll(".op");
 let displayValue = "0";
@@ -65,15 +66,17 @@ operators.forEach((op) => {
         if (previousTotal.toString().indexOf(".") > -1) {
           bottomDisplay.textContent = Math.round(previousTotal);
         } else {
-          bottomDisplay.textContent = previousTotal;
+          topDisplay.textContent = `${previousTotal} ${operation}`;
         }
         operation = `${op.getAttribute("id")}`;
         operandOne = previousTotal;
+        topDisplay.textContent = `${operandOne} ${operation}`;
         displayValue = "0";
       }
     } else {
       operandOne = Number(displayValue);
       operation = `${op.getAttribute("id")}`;
+      topDisplay.textContent = `${operandOne} ${operation}`;
       displayValue = "0";
     }
   });
@@ -86,6 +89,7 @@ clear.addEventListener("click", () => {
   operation = undefined;
   operandOne = undefined;
   operandTwo = undefined;
+  topDisplay.textContent = "";
 });
 
 equals.addEventListener("click", () => {
@@ -108,6 +112,7 @@ equals.addEventListener("click", () => {
         bottomDisplay.textContent = Math.round(rounding);
       } else {
         bottomDisplay.textContent = rounding;
+        topDisplay.textContent = `${operandOne} ${operation} ${operandTwo} =`;
       }
     }
   }
