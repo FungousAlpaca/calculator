@@ -54,16 +54,23 @@ operators.forEach((op) => {
     if (operation !== undefined && operandOne !== undefined) {
       operandTwo = Number(displayValue);
 
-      let previousTotal = operate(operation, operandOne, operandTwo);
-
-      if (previousTotal.toString().indexOf(".") > -1) {
-        bottomDisplay.textContent = Math.round(previousTotal);
+      if (operandTwo === 0 && operation === "/") {
+        bottomDisplay.textContent = "ERROR";
+        operation = undefined;
+        operandOne = undefined;
+        operandTwo = undefined;
       } else {
-        bottomDisplay.textContent = previousTotal;
+        let previousTotal = operate(operation, operandOne, operandTwo);
+
+        if (previousTotal.toString().indexOf(".") > -1) {
+          bottomDisplay.textContent = Math.round(previousTotal);
+        } else {
+          bottomDisplay.textContent = previousTotal;
+        }
+        operation = `${op.getAttribute("id")}`;
+        operandOne = previousTotal;
+        displayValue = "0";
       }
-      operation = `${op.getAttribute("id")}`;
-      operandOne = previousTotal;
-      displayValue = "0";
     } else {
       operandOne = Number(displayValue);
       operation = `${op.getAttribute("id")}`;
@@ -90,7 +97,7 @@ equals.addEventListener("click", () => {
     operandTwo = Number(displayValue);
 
     if (operandTwo === 0 && operation === "/") {
-      alert("Did you really just try that?");
+      bottomDisplay.textContent = "ERROR";
       operation = undefined;
       operandOne = undefined;
       operandTwo = undefined;
