@@ -27,6 +27,10 @@ const clear = document.querySelector('#clear');
 const bottomDisplay = document.querySelector('.display-text-bottom');
 const digits = document.querySelectorAll('.digit');
 let displayValue = '0';
+let previousTotal = 0;
+let operation = undefined;
+let operandOne = undefined;
+let operandTwo = undefined;
 
 digits.forEach(digit => {
     digit.addEventListener('click', () => {
@@ -48,30 +52,73 @@ clear.addEventListener('click', () => {
     bottomDisplay.textContent = '0';
     displayValue = '0';
     console.log(`Display value = ${displayValue}`);
+    operation = undefined;
+    operandOne = undefined;
+    operandTwo = undefined;
 })
 
 plus.addEventListener('click', () => {
+    if (operation !== undefined && operandOne !== undefined) {
+    console.log("I'M EQUALING OUT THE FIRST OPERATION.")
+    operandTwo = Number(displayValue);
+    let previousTotal = operate(operation, operandOne, operandTwo);
+    operation = add;
+    operandOne = previousTotal
+    displayValue = '0';
+    } else {
+    console.log("I'M STORING THE OPERANDONE AND OPERATION.");
     operandOne = Number(displayValue);
     operation = add;
     displayValue = '0';
+  }
 });
 
 minus.addEventListener('click', () => {
+    if (operation !== undefined && operandOne !== undefined) {
+    console.log("I'M EQUALING OUT THE FIRST OPERATION.")
+    operandTwo = Number(displayValue);
+    let previousTotal = operate(operation, operandOne, operandTwo);
+    operation = subtract;
+    operandOne = previousTotal
+    displayValue = '0';
+    } else {
+    console.log("I'M STORING THE OPERANDONE AND OPERATION.");
     operandOne = Number(displayValue);
     operation = subtract;
     displayValue = '0';
+  }
 });
 
 multiplication.addEventListener('click', () => {
+    if (operation !== undefined && operandOne !== undefined) {
+    console.log("I'M EQUALING OUT THE FIRST OPERATION.")
+    operandTwo = Number(displayValue);
+    let previousTotal = operate(operation, operandOne, operandTwo);
+    operation = multiply;
+    operandOne = previousTotal
+    displayValue = '0';
+    } else {
+    console.log("I'M STORING THE OPERANDONE AND OPERATION.");
     operandOne = Number(displayValue);
     operation = multiply;
     displayValue = '0';
+  }
 });
 
 division.addEventListener('click', () => {
+    if (operation !== undefined && operandOne !== undefined) {
+    console.log("I'M EQUALING OUT THE FIRST OPERATION.")
+    operandTwo = Number(displayValue);
+    let previousTotal = operate(operation, operandOne, operandTwo);
+    operation = divide;
+    operandOne = previousTotal
+    displayValue = '0';
+    } else {
+    console.log("I'M STORING THE OPERANDONE AND OPERATION.");
     operandOne = Number(displayValue);
     operation = divide;
     displayValue = '0';
+  }
 });
 
 equals.addEventListener('click', () => {
