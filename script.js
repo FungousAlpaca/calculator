@@ -60,11 +60,18 @@ clear.addEventListener('click', () => {
 plus.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
+    if (operandTwo === 0) {
+        alert('Did you really just try that?')
+        operation = undefined;
+        operandOne = undefined;
+        operandTwo = undefined;
+    } else {
     let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = add;
     operandOne = previousTotal
     displayValue = '0';
+    }
     } else {
     operandOne = Number(displayValue);
     operation = add;
@@ -75,11 +82,18 @@ plus.addEventListener('click', () => {
 minus.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
+    if (operandTwo === 0) {
+        alert('Did you really just try that?')
+        operation = undefined;
+        operandOne = undefined;
+        operandTwo = undefined;
+    } else {
     let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = subtract;
     operandOne = previousTotal
     displayValue = '0';
+    }
     } else {
     operandOne = Number(displayValue);
     operation = subtract;
@@ -90,11 +104,18 @@ minus.addEventListener('click', () => {
 multiplication.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
+    if (operandTwo === 0) {
+        alert('Did you really just try that?')
+        operation = undefined;
+        operandOne = undefined;
+        operandTwo = undefined;
+    } else {
     let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = multiply;
     operandOne = previousTotal
     displayValue = '0';
+    }
     } else {
     operandOne = Number(displayValue);
     operation = multiply;
@@ -105,11 +126,18 @@ multiplication.addEventListener('click', () => {
 division.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
+    if (operandTwo === 0) {
+        alert('Did you really just try that?')
+        operation = undefined;
+        operandOne = undefined;
+        operandTwo = undefined;
+    } else {
     let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = divide;
     operandOne = previousTotal
     displayValue = '0';
+    }
     } else {
     operandOne = Number(displayValue);
     operation = divide;
@@ -118,7 +146,19 @@ division.addEventListener('click', () => {
 });
 
 equals.addEventListener('click', () => {
+
+    if (operation !== undefined || operandOne !== undefined || operandTwo !== undefined) {
+
     operandTwo = Number(displayValue);
+
+    if (operandTwo === 0 && operation === divide) {
+        alert('Did you really just try that?')
+        operation = undefined;
+        operandOne = undefined;
+        operandTwo = undefined;
+    } else {
     bottomDisplay.textContent = Math.round(operate(operation, operandOne, operandTwo));
+    }
+  }
 });
 
