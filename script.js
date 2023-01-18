@@ -26,10 +26,6 @@ function operate(operator, num1, num2) {
   }
 }
 
-const division = document.querySelector("#divide");
-const multiplication = document.querySelector("#multiply");
-const minus = document.querySelector("#minus");
-const plus = document.querySelector("#plus");
 const equals = document.querySelector("#equals");
 const clear = document.querySelector("#clear");
 const bottomDisplay = document.querySelector(".display-text-bottom");
