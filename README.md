@@ -1,5 +1,5 @@
 # Calculator
-dummy text for link
+https://fungousalpaca.github.io/calculator/
 # Project Summary
 This project is a browser-based calculator that aims to provide similar functionalities to that of a handheld. 
 Here are the main functions:
