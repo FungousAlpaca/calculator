@@ -60,7 +60,7 @@ clear.addEventListener('click', () => {
 plus.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
-    let previousTotal = operate(operation, operandOne, operandTwo);
+    let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = add;
     operandOne = previousTotal
@@ -75,7 +75,7 @@ plus.addEventListener('click', () => {
 minus.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
-    let previousTotal = operate(operation, operandOne, operandTwo);
+    let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = subtract;
     operandOne = previousTotal
@@ -90,7 +90,7 @@ minus.addEventListener('click', () => {
 multiplication.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
-    let previousTotal = operate(operation, operandOne, operandTwo);
+    let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = multiply;
     operandOne = previousTotal
@@ -105,7 +105,7 @@ multiplication.addEventListener('click', () => {
 division.addEventListener('click', () => {
     if (operation !== undefined && operandOne !== undefined) {
     operandTwo = Number(displayValue);
-    let previousTotal = operate(operation, operandOne, operandTwo);
+    let previousTotal = Math.round(operate(operation, operandOne, operandTwo));
     bottomDisplay.textContent = previousTotal;
     operation = divide;
     operandOne = previousTotal
@@ -119,6 +119,6 @@ division.addEventListener('click', () => {
 
 equals.addEventListener('click', () => {
     operandTwo = Number(displayValue);
-    bottomDisplay.textContent = operate(operation, operandOne, operandTwo);
+    bottomDisplay.textContent = Math.round(operate(operation, operandOne, operandTwo));
 });
 
