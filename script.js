@@ -85,7 +85,7 @@ equals.addEventListener("click", () => {
   ) {
     operandTwo = Number(displayValue);
 
-    if (operandTwo === 0 && operation === divide) {
+    if (operandTwo === 0 && operation === "/") {
       alert("Did you really just try that?");
       operation = undefined;
       operandOne = undefined;
