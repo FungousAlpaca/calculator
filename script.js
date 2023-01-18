@@ -64,7 +64,7 @@ operators.forEach((op) => {
         let previousTotal = operate(operation, operandOne, operandTwo);
 
         if (previousTotal.toString().indexOf(".") > -1) {
-          bottomDisplay.textContent = Math.round(previousTotal);
+          bottomDisplay.textContent = previousTotal.toFixed(2);
         } else {
           topDisplay.textContent = `${previousTotal} ${operation}`;
         }
@@ -109,7 +109,7 @@ equals.addEventListener("click", () => {
       let rounding = operate(operation, operandOne, operandTwo);
 
       if (rounding.toString().indexOf(".") > -1) {
-        bottomDisplay.textContent = Math.round(rounding);
+        bottomDisplay.textContent = rounding.toFixed(2);
       } else {
         bottomDisplay.textContent = rounding;
         topDisplay.textContent = `${operandOne} ${operation} ${operandTwo} =`;
