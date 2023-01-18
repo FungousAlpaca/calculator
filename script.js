@@ -1,3 +1,22 @@
+// DOM element declarations:
+
+const equals = document.querySelector("#equals");
+const clear = document.querySelector("#clear");
+const bottomDisplay = document.querySelector(".display-text-bottom");
+const topDisplay = document.querySelector(".display-text-top");
+const digits = document.querySelectorAll(".digit");
+const operators = document.querySelectorAll(".op");
+
+// Variable declarations:
+
+let displayValue = "0";
+let previousTotal = 0;
+let operation = undefined;
+let operandOne = undefined;
+let operandTwo = undefined;
+
+// Operation functions: 
+
 function add(num1, num2) {
   return num1 + num2;
 }
@@ -26,17 +45,7 @@ function operate(operator, num1, num2) {
   }
 }
 
-const equals = document.querySelector("#equals");
-const clear = document.querySelector("#clear");
-const bottomDisplay = document.querySelector(".display-text-bottom");
-const topDisplay = document.querySelector(".display-text-top");
-const digits = document.querySelectorAll(".digit");
-const operators = document.querySelectorAll(".op");
-let displayValue = "0";
-let previousTotal = 0;
-let operation = undefined;
-let operandOne = undefined;
-let operandTwo = undefined;
+// Digit event listeners to store and display choices:
 
 digits.forEach((digit) => {
   digit.addEventListener("click", () => {
@@ -49,6 +58,9 @@ digits.forEach((digit) => {
     }
   });
 });
+
+/* Operator event listeners that call a corresponding function 
+and allows for several operations to occur: */
 
 operators.forEach((op) => {
   op.addEventListener("click", () => {
@@ -63,8 +75,8 @@ operators.forEach((op) => {
       } else {
         let previousTotal = operate(operation, operandOne, operandTwo);
 
-        if (previousTotal.toString().indexOf(".") > -1) {
-          bottomDisplay.textContent = previousTotal.toFixed(2);
+        if (previousTotal.toString().length > 9) {
+          bottomDisplay.textContent = previousTotal.toExponential(3);
         } else {
           topDisplay.textContent = `${previousTotal} ${operation}`;
         }
@@ -82,15 +94,18 @@ operators.forEach((op) => {
   });
 });
 
+// Clears stored data and resets the calculator display:
+
 clear.addEventListener("click", () => {
   bottomDisplay.textContent = "0";
   displayValue = "0";
-  console.log(`Display value = ${displayValue}`);
   operation = undefined;
   operandOne = undefined;
   operandTwo = undefined;
   topDisplay.textContent = "";
 });
+
+// Calculates the stored values by calling the corresponding function:
 
 equals.addEventListener("click", () => {
   if (
@@ -108,8 +123,8 @@ equals.addEventListener("click", () => {
     } else {
       let rounding = operate(operation, operandOne, operandTwo);
 
-      if (rounding.toString().indexOf(".") > -1) {
-        bottomDisplay.textContent = rounding.toFixed(2);
+      if (rounding.toString().length > 9) {
+        bottomDisplay.textContent = rounding.toExponential(3);
       } else {
         bottomDisplay.textContent = rounding;
         topDisplay.textContent = `${operandOne} ${operation} ${operandTwo} =`;
