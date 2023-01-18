@@ -91,12 +91,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F4ACB7;
     border-radius: 100%;
     border: white solid 2px;
     box-shadow: 0px 3px gray;
     font-family: 'Lato', sans-serif;
     font-size: 25px;
+}
+
+.op {
+    background-color: #FFD580;
+}
+
+.digit{
+    background-color: #FFCAD4;
+}
+
+#equals {
+    background-color: #abf7b1;
+}
+
+#clear {
+    background-color: #FF795B;
 }
 
 .calc-button:active {
