@@ -7,5 +7,5 @@ Here are the main functions:
 * "Clear" button that deletes stored data so the user can continue using the calculator
 * A display for calculator results
 # Calculator in Action!
-insert gif here
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/106215095/213403835-4db5f39c-607c-47f2-8a1e-c48eb1ef2f16.gif)
 
